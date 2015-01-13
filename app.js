@@ -15,22 +15,6 @@ var youtube = require('./youtube');
 var youTubeclient = new youtube.Client(config.youTube);
 
 var app = express();
-var http = require('http');
-var server = http.Server(app);
-var io = require('socket.io')(server);
-
-io.on('connection', function(socket) {
-	console.log('a user connected');
-	socket.on('play', function(videoId){
-		console.log('newVideo ' + videoId);
-		io.sockets.emit('newVideo', videoId);
-	});
-	socket.on('chat message', function(msg, img){
-		io.emit('chat message', msg, img);
-	});
-});
-
-
 mongoose.connect(config.mongoUrl);
 
 initPassport(passport);
@@ -49,8 +33,23 @@ app.use(expressSession({secret: 'mySecretKey'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
+var http = require('http').Server(app);
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket) {
+	console.log('a user connected');
+	socket.on('play', function(videoId){
+		console.log('newVideo ' + videoId);
+		io.sockets.emit('newVideo', videoId);
+	});
+	socket.on('chat message', function(msg, img){
+		io.emit('chat message', msg, img);
+	});
+});
+
 app.use('/', routes(io));
 app.use('/video', videoRoutes);
+
 app.get('/search', function(req, res) {
 	var term = req.query['q'];
 	youTubeclient.search(term, function(data) {
@@ -59,6 +58,6 @@ app.get('/search', function(req, res) {
 	});
 });
 
-app.listen(app.get('port'), function() {
+var server = http.listen(app.get('port'), function() {
 	console.log("Express server listening on port " + server.address().port);
 });
