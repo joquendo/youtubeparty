@@ -16,7 +16,7 @@ var youTubeclient = new youtube.Client(config.youTube);
 
 var app = express();
 var http = require('http');
-var server = http.createServer(app).listen(3000);
+var server = http.createServer(app).listen(80);
 var io = require('socket.io')(server);
 io.on('connection', function(socket) {
 	console.log('a user connected');
