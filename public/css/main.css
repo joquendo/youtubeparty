@@ -1,3 +1,20 @@
+.profile-img {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 50%;
+  float: left; }
+
+.profile-img.center {
+  float: none; }
+
+.userName-big {
+  color: white;
+  font-size: 15pt;
+  margin-left: 4.5em;
+  margin-top: 24px; }
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -53,7 +70,7 @@ ul.user-details {
   float: right;
   display: block;
   text-align: right;
-  padding-bottom: 5px;
+  padding: 0 10px 5px;
   width: 100%;
   color: black;
   background-color: #B5825F; }
@@ -113,13 +130,6 @@ ul.user-details {
   font-weight: 400;
   display: block; }
 
-.profile-img {
-  width: 76px;
-  height: 76px;
-  margin: 0 auto 10px;
-  display: block;
-  border-radius: 50%; }
-
 .profile-img-small {
   width: 36px;
   height: 36px;
@@ -131,12 +141,6 @@ ul.user-details {
 .new-account {
   display: block;
   margin-top: 10px; }
-
-.userName-big {
-  color: white;
-  font-size: 15pt;
-  margin-left: -30px;
-  margin-top: 20px; }
 
 .userName {
   color: white;
@@ -165,10 +169,14 @@ form#message button {
 #messages {
   list-style-type: none;
   margin: 0;
+  margin-right: -15px;
   padding: 0; }
 
 #messages li {
   padding: 5px 10px; }
 
 #messages li:nth-child(odd) {
-  background: #eee; }
+  background: #B1DDDF; }
+
+#messages img {
+  margin-right: 0.5em; }

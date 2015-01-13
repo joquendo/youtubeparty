@@ -1,0 +1,17 @@
+.profile-img{
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 50%;
+    float:left;
+}
+.profile-img.center {
+	float:none;
+}
+.userName-big{
+    color:white;
+    font-size:15pt;
+	margin-left:4.5em;
+    margin-top:24px;
+}

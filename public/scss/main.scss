@@ -1,6 +1,20 @@
-@import 'form';
+$tablet-width: 768px;
+$desktop-width: 1024px;
 
-$primary-color: gray;
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@import 'guestprofile';
+@import 'form';
  
 body {
   padding: 0px;
@@ -22,7 +36,7 @@ ul.user-details{
     float:right;
     display:block;
     text-align:right;
-    padding-bottom:5px;
+    padding:0 10px 5px;
     width:100%;
     color:black;
     background-color:#B5825F;
@@ -69,7 +83,6 @@ ul.user-details{
     color:red;
 }
  
- 
 .account-wall{
     margin-top: 20px;
     padding: 40px 0px 20px 0px;
@@ -92,13 +105,6 @@ ul.user-details{
     font-weight: 400;
     display: block;
 }
-.profile-img{
-    width: 76px;
-    height: 76px;
-    margin: 0 auto 10px;
-    display: block;
-    border-radius: 50%;
-}
 .profile-img-small{
  
     width: 36px;
@@ -108,17 +114,9 @@ ul.user-details{
     border-radius: 50%; 
     margin-top:10px;  
 }
- 
 .new-account{
     display: block;
     margin-top: 10px;
-}
-.userName-big{
- 
-    color:white;
-    font-size:15pt;
-    margin-left:-30px;
-    margin-top:20px;
 }
 .userName{
     color:white;
@@ -129,6 +127,7 @@ ul.user-details{
 form#message { background: #000; padding: 3px; position: absolute; bottom: 0; width: 100%; }
 form#message input { border: 0; padding: 10px; width: 89%; }
 form#message button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-#messages { list-style-type: none; margin: 0; padding: 0; }
+#messages { list-style-type: none; margin:0; margin-right:-15px; padding: 0; }
 #messages li { padding: 5px 10px; }
-#messages li:nth-child(odd) { background: #eee; }
+#messages li:nth-child(odd) { background: #B1DDDF; }
+#messages img { margin-right:.5em; }

@@ -24,8 +24,8 @@ gulp.task('sass', function() {
 gulp.task('browser-sync', function() {
     browserSync({
         proxy: "http://localhost:6500",
-        ghostMode: false
-        //port: 1234
+        ghostMode: false,
+        port: 3000
     });
 });
  
