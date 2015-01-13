@@ -1,29 +1,31 @@
 var express = require('express');
-var routes = require('./routes/index');
-var videoRoutes = require('./routes/videos');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
-var flash = require('connect-flash');
+var youtube = require('./youtube');
+var path = require('path');
+var routes = require('./routes/index');
+var videoRoutes = require('./routes/videos');
+var config = require('./config.js');
+var passport = require('passport');
 var initPassport = require('./passport/init');
 var expressSession = require('express-session');
-var passport = require('passport');
 
-var path = require('path');
-var config = require('./config.js');
-var youtube = require('./youtube');
-var youTubeclient = new youtube.Client(config.youTube);
 
 var app = express();
 mongoose.connect(config.mongoUrl);
 
 initPassport(passport);
+
+// Using the flash middleware provided by connect-flash to store messages in session
+// and displaying in templates
+var flash = require('connect-flash');
 app.use(flash());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+var youTubeclient = new youtube.Client(config.youTube);
 
-app.set('port', (process.env.PORT || 6500));
+app.set('port', process.env.PORT || 6500);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower', express.static(path.join(__dirname, 'bower_components')));
 app.use(bodyParser.json());
