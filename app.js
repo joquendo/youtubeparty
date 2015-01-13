@@ -28,7 +28,7 @@ io.on('connection', function(socket) {
 		io.emit('chat message', msg, img);
 	});
 });
-server.listen(4000, 'localhost');
+server.listen(3000);
 
 mongoose.connect(config.mongoUrl);
 
