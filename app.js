@@ -19,8 +19,6 @@ var http = require('http');
 var server = http.Server(app);
 var io = require('socket.io')(server);
 
-server.listen(80);
-
 io.on('connection', function(socket) {
 	console.log('a user connected');
 	socket.on('play', function(videoId){
