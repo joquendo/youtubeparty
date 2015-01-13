@@ -16,9 +16,11 @@ var youTubeclient = new youtube.Client(config.youTube);
 
 var app = express();
 var http = require('http');
-var server = http.createServer(app);
-server.listen(3000);
+var server = http.Server(app);
 var io = require('socket.io')(server);
+
+server.listen(80);
+
 io.on('connection', function(socket) {
 	console.log('a user connected');
 	socket.on('play', function(videoId){
