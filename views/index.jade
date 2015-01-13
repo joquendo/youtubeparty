@@ -1,0 +1,80 @@
+extends layout
+ 
+block content
+ 
+  a(href='/signout' id="signout") log out
+  .main(ng-app='YouTube' ng-controller='YouTubeCtrl')
+    .col-lg-6(style='background-color:#1C1D21;height:400px')
+      br
+      .row
+        .col-lg-2
+          img(src='#{ProfileImage}' class='profile-img')
+        .col-lg-4
+          div(class='userName-big') #{DisplayName}
+ 
+      .row(ng-repeat='person in people')
+        .col-lg-2
+          img(ng-src='{{person.ProfileImage}}' class='profile-img-small')
+        .col-lg-4
+          div(class='userName') {{person.DisplayName}} 
+  
+    .col-lg-6(style='background-color:#445878;height:400px')
+      #player
+      .tableContainer
+        table#nowPlaying.table.table-condensed(style='color:#EEEFF7')
+          tbody
+            tr(ng-repeat='video in nowPlaying')
+              td(ng-click='selectNowPlaying(video,$index)', ng-class='{selected: (currentSong==$index)}')
+                | {{($index)+1}} - {{video.description | limitTo : 40}}
+              td
+                button.btn.btn-danger.btn-xs.glyphicon.glyphicon-remove(ng-click='remove(video)')
+    .row
+      .col-lg-6(style='background-color:#92CDCF;height:400px')
+        ul#messages
+        form#message(action="")
+          input(
+            id='m'
+            autocomplete='off'
+          )
+          button Send
+      .col-lg-6(style='background-color:#EEEFF7;height:400px;padding-top:5px')
+        form.form-inline(role='form')
+          .row
+            .col-xs-8.input-group.col-xs-offset-1
+              input.form-control(type='text', ng-model='term', placeholder='Search')
+            .input-group
+              button.btn.btn-primary.glyphicon.glyphicon-search(ng-click='search(term)')
+        br
+        .tableContainer
+          table.table.table-striped.search-results-table
+            tbody
+              tr(ng-repeat='item in results')
+                td
+                  img.thumbnail(ng-src='{{item.snippet.thumbnails.default.url}}')
+                td
+                  .description
+                    | {{item.snippet.description}}
+                  button.btn.btn-success.btn-xs.glyphicon.glyphicon-music(ng-click='add(item)')
+                  button.btn.btn-danger.btn-xs.glyphicon.glyphicon-play(ng-click='play(item)')
+    div(style='float:right')
+      #player
+ 
+block script
+      script
+        |var myName = "#{DisplayName}";
+        |var socket = io();
+        |socket.on("join",function(data){
+        | scope.join(data);
+        | })
+        |socket.on("newVideo",function(data){
+        | scope.socketPlay(data);
+        | })
+        |$('form').submit(function(){
+        | socket.emit('chat message', $('#m').val());
+        | $('#m').val('');
+        | return false;
+        |});
+        |socket.on('chat message', function(msg){
+        | $('#messages').append($('<li>').text(msg));
+        |});
+        script(src='js/main.js')

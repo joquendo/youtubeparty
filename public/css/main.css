@@ -1,0 +1,174 @@
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto; }
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+  margin-bottom: 10px; }
+
+.form-signin .checkbox {
+  font-weight: normal; }
+
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.form-signin .form-control:focus {
+  z-index: 2; }
+
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+.form-signin input[type="password"].nomargin {
+  margin-bottom: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+h1.error-message {
+  color: red; }
+
+ul.user-details {
+  list-style: none; }
+
+#signout {
+  float: right;
+  display: block;
+  text-align: right;
+  padding-bottom: 5px;
+  width: 100%;
+  color: black;
+  background-color: #B5825F; }
+
+#nowPlaying tr:first-child td {
+  border-top: 0; }
+
+#player {
+  float: right;
+  margin-right: -10px; }
+
+.main {
+  margin-top: 10px;
+  width: 100%;
+  margin: 0px !important;
+  padding: 0px !important; }
+
+.thumbnail {
+  width: 70px; }
+
+.description {
+  font-size: 9pt; }
+
+.search-results-table tr td {
+  height: 10px;
+  padding: 0px; }
+
+.search-results-table tr {
+  cursor: hand; }
+
+.tableContainer {
+  height: 350px;
+  overflow: auto; }
+
+.selected {
+  color: red; }
+
+.account-wall {
+  margin-top: 20px;
+  padding: 40px 0px 20px 0px;
+  background-color: #f7f7f7;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); }
+
+.signup-wall {
+  margin-top: 20px;
+  padding: 20px 0px 20px 0px;
+  background-color: #f7f7f7;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); }
+
+.login-title {
+  color: #555;
+  font-size: 18px;
+  font-weight: 400;
+  display: block; }
+
+.profile-img {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 50%; }
+
+.profile-img-small {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 10px;
+  display: block;
+  border-radius: 50%;
+  margin-top: 10px; }
+
+.new-account {
+  display: block;
+  margin-top: 10px; }
+
+.userName-big {
+  color: white;
+  font-size: 15pt;
+  margin-left: -30px;
+  margin-top: 20px; }
+
+.userName {
+  color: white;
+  font-size: 12pt;
+  margin-left: -50px;
+  margin-top: 18px; }
+
+form#message {
+  background: #000;
+  padding: 3px;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+
+form#message input {
+  border: 0;
+  padding: 10px;
+  width: 89%; }
+
+form#message button {
+  width: 9%;
+  background: #82e0ff;
+  border: none;
+  padding: 10px; }
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+#messages li {
+  padding: 5px 10px; }
+
+#messages li:nth-child(odd) {
+  background: #eee; }
