@@ -39,7 +39,7 @@ app.use(flash());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.set('port', process.env.PORT || 6500);
+app.set('port', (process.env.PORT || 6500));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower', express.static(path.join(__dirname, 'bower_components')));
 app.use(bodyParser.json());
@@ -59,6 +59,6 @@ app.get('/search', function(req, res) {
 	});
 });
 
-var server = app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function() {
 	console.log("Express server listening on port " + server.address().port);
 });
