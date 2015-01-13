@@ -7,7 +7,7 @@ module.exports = {
 	facebook : {
 		clientID: '773378426061827',
 		clientSecret : '8951ad1df08cb2d35227193bae8d04ee',
-		callbackURL : 'https://jamesyoutubeparty.herokuapp.com/auth/facebook/callback'
+		callbackURL : 'http://jamesyoutubeparty.herokuapp.com/auth/facebook/callback'
 		//callbackURL : 'http://localhost:4000/auth/facebook/callback'
 	}
 }
