@@ -16,7 +16,7 @@ var youTubeclient = new youtube.Client(config.youTube);
 
 var app = express();
 var http = require('http');
-var server = http.createServer(app);
+var server = http.createServer(app).listen(3000);
 var io = require('socket.io')(server);
 io.on('connection', function(socket) {
 	console.log('a user connected');
@@ -28,7 +28,6 @@ io.on('connection', function(socket) {
 		io.emit('chat message', msg, img);
 	});
 });
-server.listen(3000);
 
 mongoose.connect(config.mongoUrl);
 
