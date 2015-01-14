@@ -1,13 +1,12 @@
 {
-  "name": "James's YouTube Party",
-  "version": "0.0.0",
+  "name": "app",
+  "version": "0.0.1",
   "authors": [
     "James Oquendo <james.oquendo@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
     "test",
     "tests"

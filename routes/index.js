@@ -14,7 +14,7 @@ var isAuthenticated = function (req, res, next) {
 router.get('/', isAuthenticated, function(req, res) {
 	var user = req.user;
 	var pageData = {
-		title: 'James\'s YouTube Party | jamesoquendo.com/projects',
+		title: 'YouTube Party | jamesoquendo.com/projects',
 		DisplayName: user.displayName(),
 		ProfileImage: user.profileImage()
 	};
