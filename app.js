@@ -43,7 +43,7 @@ io.on('connection', function(socket) {
 	socket.on('play', function(videoId){
 		console.log('newVideo ' + videoId);
 		io.sockets.emit('newVideo', videoId);
-	});
+	})
 	socket.on('chat message', function(msg, img){
 		io.emit('chat message', msg, img);
 	});
