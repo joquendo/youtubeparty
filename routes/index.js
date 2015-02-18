@@ -32,6 +32,21 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
 router.get('/login', function(req, res) {
 	res.render('login', { message: req.flash('message') });
 });
+router.post('/login', passport.authenticate('login', {
+	successRedirect: '/',
+	failureRedirect: '/login',
+	failureFlash: true
+}));
+/* GET Registration Page */
+router.get('/signup', function(req, res) {
+	res.render('register', { message: req.flash('message') });
+});
+/* Handle Registration POST */
+router.post('/signup', passport.authenticate('signup', {
+	successRedirect: '/',
+	failureRedirect: '/signup',
+	failureFlash: true
+}));
 
 router.get('/signout', function(req, res) {
 	req.logout();

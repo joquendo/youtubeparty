@@ -1,5 +1,6 @@
 $tablet-width: 768px;
 $desktop-width: 1024px;
+$dark-blue: #24214C;
 
 @mixin tablet {
     @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
@@ -36,10 +37,11 @@ ul.user-details{
     float:right;
     display:block;
     text-align:right;
-    padding:0 10px 5px;
+    padding:5px 10px;
     width:100%;
-    color:black;
-    background-color:#B5825F;
+    color:white;
+    background-color:$dark-blue;
+    line-height: 15px;
 }
  
 #nowPlaying tr:first-child td{
@@ -57,7 +59,6 @@ ul.user-details{
   margin:0px !important;
   padding:0px !important;
 }
- 
  
 .thumbnail{
     width: 70px; 
@@ -106,17 +107,12 @@ ul.user-details{
     display: block;
 }
 .profile-img-small{
- 
     width: 36px;
     height: 36px;
     margin: 0 auto 10px;
     display: block;
     border-radius: 50%; 
     margin-top:10px;  
-}
-.new-account{
-    display: block;
-    margin-top: 10px;
 }
 .userName{
     color:white;
@@ -131,3 +127,7 @@ form#message button { width: 9%; background: rgb(130, 224, 255); border: none; p
 #messages li { padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #B1DDDF; }
 #messages img { margin-right:.5em; }
+#youTubePlayer {
+    background-color:#1C1D21;
+    height:400px;
+}

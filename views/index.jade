@@ -6,21 +6,9 @@ block content
     .col-xs-12
       a(href='/signout' id="signout") log out
   .main(ng-app='YouTube' ng-controller='YouTubeCtrl')
-    .col-lg-6(style='background-color:#1C1D21;height:400px')
-      br
-      .row
-        .col-xs-12
-          img(src='#{ProfileImage}' class='profile-img')
-          h4(class='userName-big') #{DisplayName}
- 
-      .row(ng-repeat='person in people')
-        .col-lg-2
-          img(ng-src='{{person.ProfileImage}}' class='profile-img-small')
-        .col-lg-4
-          div(class='userName') {{person.DisplayName}} 
-  
-    .col-lg-6(style='background-color:#445878;height:400px')
+    .col-lg-6#youTubePlayer
       #player
+    .col-lg-6(style='background-color:#445878;height:400px')
       .tableContainer
         table#nowPlaying.table.table-condensed(style='color:#EEEFF7')
           tbody
@@ -29,6 +17,11 @@ block content
                 | {{($index)+1}} - {{video.description | limitTo : 40}}
               td
                 button.btn.btn-danger.btn-xs.glyphicon.glyphicon-remove(ng-click='remove(video)')
+      .row(ng-repeat='person in people')
+        .col-lg-2
+          img(ng-src='{{person.ProfileImage}}' class='profile-img-small')
+        .col-lg-4
+          div(class='userName') {{person.DisplayName}} 
     .row
       .col-lg-6(style='background-color:#92CDCF;height:400px')
         ul#messages

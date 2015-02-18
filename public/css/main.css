@@ -15,7 +15,7 @@
   margin-left: 4.5em;
   margin-top: 24px; }
 
-.form-signin {
+.form-signin, .form-register {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto; }
@@ -53,6 +53,25 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
+.form-register input[type="text"], .form-register input[type="password"] {
+  margin-bottom: -1px;
+  border-radius: 0; }
+
+.form-register input[name="username"] {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
+
+.form-register input[name="lastName"] {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px; }
+
+.form-register button {
+  margin-top: 10px; }
+
+.new-account, .log-in {
+  display: block;
+  margin-top: 10px; }
+
 body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
@@ -70,10 +89,11 @@ ul.user-details {
   float: right;
   display: block;
   text-align: right;
-  padding: 0 10px 5px;
+  padding: 5px 10px;
   width: 100%;
-  color: black;
-  background-color: #B5825F; }
+  color: white;
+  background-color: #24214C;
+  line-height: 15px; }
 
 #nowPlaying tr:first-child td {
   border-top: 0; }
@@ -138,10 +158,6 @@ ul.user-details {
   border-radius: 50%;
   margin-top: 10px; }
 
-.new-account {
-  display: block;
-  margin-top: 10px; }
-
 .userName {
   color: white;
   font-size: 12pt;
@@ -180,3 +196,7 @@ form#message button {
 
 #messages img {
   margin-right: 0.5em; }
+
+#youTubePlayer {
+  background-color: #1C1D21;
+  height: 400px; }
