@@ -128,6 +128,7 @@ app.controller("YouTubeCtrl", function($scope,$http){
 });
  
 function onPlayerReady(event) {
+  $('#player').addClass('embed-responsive-item');
   player.playVideo();
 }
  
@@ -141,9 +142,9 @@ function onPlayerStateChange(event) {
  
 function injectPlayerScript(){
 	var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 function NowPlaying(){
 	this.data=["EWEl8-PHhMI","9e0yCq1AEeY"];

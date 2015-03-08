@@ -32,17 +32,19 @@ h1.error-message{
 ul.user-details{
     list-style: none;
 }
- 
-#signout{
-    float:right;
-    display:block;
-    text-align:right;
-    padding:5px 10px;
-    width:100%;
-    color:white;
+.topbar {
     background-color:$dark-blue;
-    line-height: 15px;
+    a#signout{
+        float:right;
+        display:block;
+        text-align:right;
+        padding:5px 10px;
+        width:100%;
+        color:white;
+        line-height: 15px;
+    }
 }
+
  
 #nowPlaying tr:first-child td{
     border-top:0;
@@ -76,8 +78,8 @@ ul.user-details{
 }
  
 .tableContainer{
-     height: 350px;
-   overflow: auto;
+    height: 300px;
+    overflow: scroll;
 }
  
 .selected{
@@ -123,11 +125,28 @@ ul.user-details{
 form#message { background: #000; padding: 3px; position: absolute; bottom: 0; width: 100%; }
 form#message input { border: 0; padding: 10px; width: 89%; }
 form#message button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-#messages { list-style-type: none; margin:0; margin-right:-15px; padding: 0; }
+#messages { list-style-type: none; margin:0; margin-right:-15px; padding: 0; max-height:357px; overflow:scroll; }
 #messages li { padding: 5px 10px; }
 #messages li:nth-child(odd) { background: #B1DDDF; }
 #messages img { margin-right:.5em; }
 #youTubePlayer {
     background-color:#1C1D21;
+    /*height:400px;*/
+}
+#messagesContainer {
+    background-color:#92CDCF;
+    height:400px;
+}
+h4 {
+  color:white;  
+}
+#videoPlaylist{
+    padding-top:5px;
+    color:white;
+    background-color:#445878;
+    height:400px
+}
+#videoSearch {
+    background-color:#131462;
     height:400px;
 }

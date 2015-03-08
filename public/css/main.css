@@ -85,15 +85,16 @@ h1.error-message {
 ul.user-details {
   list-style: none; }
 
-#signout {
-  float: right;
-  display: block;
-  text-align: right;
-  padding: 5px 10px;
-  width: 100%;
-  color: white;
-  background-color: #24214C;
-  line-height: 15px; }
+.topbar {
+  background-color: #24214C; }
+  .topbar a#signout {
+    float: right;
+    display: block;
+    text-align: right;
+    padding: 5px 10px;
+    width: 100%;
+    color: white;
+    line-height: 15px; }
 
 #nowPlaying tr:first-child td {
   border-top: 0; }
@@ -122,8 +123,8 @@ ul.user-details {
   cursor: hand; }
 
 .tableContainer {
-  height: 350px;
-  overflow: auto; }
+  height: 300px;
+  overflow: scroll; }
 
 .selected {
   color: red; }
@@ -186,7 +187,9 @@ form#message button {
   list-style-type: none;
   margin: 0;
   margin-right: -15px;
-  padding: 0; }
+  padding: 0;
+  max-height: 357px;
+  overflow: scroll; }
 
 #messages li {
   padding: 5px 10px; }
@@ -199,4 +202,21 @@ form#message button {
 
 #youTubePlayer {
   background-color: #1C1D21;
+  /*height:400px;*/ }
+
+#messagesContainer {
+  background-color: #92CDCF;
+  height: 400px; }
+
+h4 {
+  color: white; }
+
+#videoPlaylist {
+  padding-top: 5px;
+  color: white;
+  background-color: #445878;
+  height: 400px; }
+
+#videoSearch {
+  background-color: #131462;
   height: 400px; }
