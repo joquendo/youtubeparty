@@ -1,5 +1,5 @@
 module.exports = {
-	mongoUrl : 'mongodb://joquendo:M0ng0DB1!@ds063150.mongolab.com:63150/mongosandbox',
+	mongoUrl : 'mongodb+srv://joquendo:M0ng0DB1!1@cluster0-zorrn.mongodb.net/test?retryWrites=true&w=majority',
 	youTube : {
 		key : 'AIzaSyDDWf_ETIKJ-X48u1IELy4wHw5O4bj244E',
 		maxResults : 10		
