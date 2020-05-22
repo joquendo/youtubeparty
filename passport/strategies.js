@@ -8,7 +8,7 @@ var bCrypt = require('bcrypt-nodejs');
 module.exports = function(passport){
  
  
-    passport.use('facebook', new FacebookStrategy(config.facebook,        
+    passport.use(new FacebookStrategy(config.facebook,        
         function(token, refreshToken, profile, done) {
             findOrCreateUser = function(){
                 // find a user in Mongo with provided username
@@ -29,7 +29,7 @@ module.exports = function(passport){
                         newUser.facebook.id    = profile.id;
                         newUser.facebook.token = token;
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                        newUser.facebook.email = profile.emails[0].value; 
+                        // newUser.facebook.email = profile.emails[0].value; 
  
                         // save the user
                         newUser.save(function(err) {
