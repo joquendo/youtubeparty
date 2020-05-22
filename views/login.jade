@@ -3,7 +3,7 @@ extends layout
 block content
   div.container
     div.row
-      div.col-sm-6.col-md-4.col-md-offset-4
+      div.col-sm-12.col-md-4.col-md-offset-4
         h1.text-center.login-title YouTube Party
           div.account-wall
             img(class='profile-img center', src='https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120')
@@ -13,6 +13,7 @@ block content
               input(type='password', name='password' class='form-control', placeholder='Password', required)
               button(class='btn btn-lg btn-success btn-block', type='submit') Sign in
               br
+              a(href='/signup', class='text-center new-account') Register a new Account
               span.clearfix
               div Or
               br
@@ -20,7 +21,6 @@ block content
               a(href='/auth/facebook' class='btn btn-primary btn-lg btn-block')
                 span(class='fa fa-facebook') 
                   |Facebook
-          a(href='/signup', class='text-center new-account') Register a new Account
           #message
           if message
             h1.text-center.error-message #{message}
