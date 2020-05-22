@@ -31,7 +31,7 @@ block content
             button.btn.btn-primary.glyphicon.glyphicon-search(ng-click='search(term)')
         br
         .tableContainer
-          table.table.table-dark.search-results-table
+          table.table.table-dark.search-results-table.table-responsive-md
             tbody
               tr(ng-repeat='item in results')
                 td
@@ -39,6 +39,7 @@ block content
                 td
                   .description
                     | {{item.snippet.description}}
+                    br
                   button.btn.btn-success(ng-click='add(item)') Add to Playlist
                   
                   button.btn.btn-danger(ng-click='play(item)') Play Now!
