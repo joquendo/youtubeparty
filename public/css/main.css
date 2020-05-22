@@ -107,13 +107,17 @@ ul.user-details {
   margin-top: 10px;
   width: 100%;
   margin: 0px !important;
-  padding: 0px !important; }
+  padding: 0px !important; 
+}
 
 .thumbnail {
-  width: 70px; }
+  width: 70px; 
+}
 
 .description {
-  font-size: 9pt; }
+  color:#fff;
+  font-size: 9pt;
+}
 
 .search-results-table tr td {
   height: 10px;
@@ -127,7 +131,7 @@ ul.user-details {
   overflow: scroll; }
 
 .selected {
-  color: red; }
+  color: rgb(206, 166, 34); }
 
 .account-wall {
   margin-top: 20px;
@@ -202,14 +206,16 @@ form#message button {
 
 #youTubePlayer {
   background-color: #1C1D21;
-  /*height:400px;*/ }
-
+}
 #messagesContainer {
   background-color: #92CDCF;
-  height: 400px; }
+  height: 400px;
+}
 
 h4 {
-  color: white; }
+  color: white; 
+  margin-bottom: 15px; 
+}
 
 #videoPlaylist {
   padding-top: 5px;
@@ -219,4 +225,6 @@ h4 {
 
 #videoSearch {
   background-color: #131462;
-  height: 400px; }
+  height: 400px;
+  padding: 15px;
+}
