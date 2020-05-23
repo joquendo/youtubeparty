@@ -82,7 +82,7 @@ module.exports = function(passport){
                         newUser.facebook.id    = profile.id;
                         newUser.facebook.token = token;
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                        newUser.facebook.email = profile.emails[0].value; 
+                        newUser.facebook.email = profile.emails ? profile.emails[0].value : ''; 
 
                         // save the user
                         newUser.save(function(err) {

@@ -24,12 +24,14 @@ module.exports = function(passport){
                     } else {
                         // if there is no user with that email
                         // create the user
- 
+                        console.log('create the user from facebook profile');
+                        conosole.log('profile', profile);
+
                         var newUser = new User();
                         newUser.facebook.id    = profile.id;
                         newUser.facebook.token = token;
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                        // newUser.facebook.email = profile.emails[0].value; 
+                        newUser.facebook.email = profile.emails ? profile.emails[0].value : ''; 
  
                         // save the user
                         newUser.save(function(err) {
