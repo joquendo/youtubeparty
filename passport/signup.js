@@ -56,6 +56,8 @@ module.exports = function(passport){
     passport.use('facebook', new FacebookStrategy(config.facebook,
         function(token, refreshToken, profile, done) {
             findOrCreateUser = function(){
+
+                console.log('profile',profile);
                 // find a user in Mongo with provided username
                 User.findOne({ 'facebook.id' : profile.id }, function(err, user) {
                     // In case of any error, return using the done method
@@ -65,8 +67,12 @@ module.exports = function(passport){
                     }
                     // already exists
                     if (user) {
+                        console.log('user already exists');
+                        console.log('user', user);
                       return done(null, user);
                     } else {
+
+                        console.log('no user with that email')
                         // if there is no user with that email
                         // create the user
 
@@ -76,7 +82,7 @@ module.exports = function(passport){
                         newUser.facebook.id    = profile.id;
                         newUser.facebook.token = token;
                         newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
-                        // newUser.facebook.email = profile.emails[0].value; 
+                        newUser.facebook.email = profile.emails[0].value; 
 
                         // save the user
                         newUser.save(function(err) {
