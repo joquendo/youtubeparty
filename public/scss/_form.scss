@@ -4,6 +4,7 @@
     padding: 15px;
     margin: 0 auto;
 }
+
 .form-signin .form-signin-heading, .form-signin .checkbox{
     margin-bottom: 10px;
 }
@@ -56,5 +57,17 @@
 .new-account,
 .log-in{
     display: block;
-    margin-top: 10px;
+    margin-bottom: 10px;
+}
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .form-signin,
+    .form-register {
+        max-width: 650px;
+    }
+
+    .form-signin input.form-control,
+    .form-register input.form-control {
+        height: 50px;
+    }
 }

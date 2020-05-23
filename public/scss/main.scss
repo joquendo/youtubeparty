@@ -108,6 +108,20 @@ ul.user-details{
     font-weight: 400;
     display: block;
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+    .login-title{
+        color: #555;
+        font-size: 58px;
+    }
+
+    .account-wall h3 {
+        font-size: 57px;
+    }
+
+}
 .profile-img-small{
     width: 36px;
     height: 36px;

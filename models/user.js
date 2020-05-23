@@ -25,7 +25,7 @@ userSchema.methods.profileImage = function(password) {
 module.exports = mongoose.model('User',userSchema);
  
 function getAnonImage(){
-  return 'https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=50';
+  return '/images/account_circle-24px.svg';
 }
  
 function getFacebookProfileUrl(user){

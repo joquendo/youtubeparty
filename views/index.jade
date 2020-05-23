@@ -1,7 +1,7 @@
 extends layout
  
 block content
-  .container-fluid(ng-app='YouTube' ng-controller='YouTubeCtrl')
+  .container-md(ng-app='YouTube' ng-controller='YouTubeCtrl')
     .row
       .col-xs-12.topbar
         a(href='/signout' id="signout") log out
@@ -11,7 +11,7 @@ block content
           #youTubePlayer.embed-responsive.embed-responsive-16by9
             #player
       .col-lg-6#videoPlaylist
-        h4 YouTube Playlist
+        h4 NOW PLAYING:
         p Change the current song by clicking another song in the playlist.
           #playlist
             .tableContainer
