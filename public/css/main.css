@@ -211,10 +211,11 @@ form#message button {
 
 #youTubePlayer {
   background-color: #1C1D21;
-  /*height:400px;*/ }
+  height: 390px; }
 
 #messagesContainer {
-  background-color: #92CDCF; }
+  background-color: #92CDCF;
+  height: 390px; }
 
 h4 {
   color: white; }
@@ -223,7 +224,7 @@ h4 {
   padding-top: 5px;
   color: white;
   background-color: #445878;
-  height: 400px; }
+  height: 390px; }
 
 #videoSearch {
   background-color: #131462; }
