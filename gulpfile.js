@@ -1,5 +1,6 @@
 // gulp
 var gulp = require('gulp');
+var { parallel, task, watch, src, dest } = gulp;
  
 //plugins
 var server = require('gulp-express');
@@ -7,21 +8,30 @@ var sass = require('gulp-sass');
 var browserSync = require('browser-sync');
 var concat = require('gulp-concat');
 var reload = browserSync.reload;
+var del = require('del');
+
+sass.compiler = require('node-sass');
  
-gulp.task('scripts', function() {
-  gulp.src(['public/js/*.js','!public/js/all.js'])
+task('scripts', function () {
+  src(['public/js/*.js','!public/js/all.js'])
     .pipe(concat('all.js'))
-    .pipe(gulp.dest('public/js/'))
+    .pipe(dest('public/js/'))
 });
  
-gulp.task('sass', function() {
-    return gulp.src('public/scss/**/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('public/css'))
+task('sass', function() {
+    return src('public/scss/*.scss')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(dest('public/css'))
         .pipe(reload({stream:true}));
 });
+
+task('clean', () => {
+    return del([
+        'public/css/main.css'
+    ]);
+});
  
-gulp.task('browser-sync', function() {
+task('browser-sync', function() {
     browserSync({
         proxy: "http://localhost:6500",
         ghostMode: false,
@@ -29,26 +39,30 @@ gulp.task('browser-sync', function() {
     });
 });
  
-gulp.task('reload',function(){
-       gulp.src('public/scss/*.scss')
+task('reload',function(){
+       src('public/scss/*.scss')
      .pipe(reload({stream:true}));
 });
  
-gulp.task('watch', function() {
-    gulp.watch('public/scss/**/*.scss', ['sass']);
-    gulp.watch(['public/js/*.js','!public/js/all.js'], ['scripts']);
+task('watch', function() {
+    watch('public/scss/*.scss', function() {
+        cb();
+    });
+    watch(['public/js/*.js','!public/js/all.js'], function() {
+        cb();
+    });
 });
  
-gulp.task('server', function () {
+task('server', function () {
     // Start the server at the beginning of the task
     server.run({
         file: 'app'
     });
  
  // Restart the server when file changes
-    gulp.watch(['public/**/*.html'], ['reload']);
-    gulp.watch(['app.js', 'routes/**/*.js'], ['server']);
-    gulp.watch(['app.js', 'views/**/*.jade'], ['reload']);
+    watch(['public/**/*.html'], reload);
+    watch(['app.js', 'routes/**/*.js'], server);
+    watch(['app.js', 'views/**/*.jade'], reload);
 });
  
-gulp.task('default', ['server','sass','scripts','watch','browser-sync']);
+exports.default = parallel('server', 'clean', 'sass', 'scripts', 'watch', 'browser-sync');
