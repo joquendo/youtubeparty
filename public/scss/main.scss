@@ -1,6 +1,17 @@
+$mobile-iphonex-mindevice-width: 375px;
+$mobile-iphonex-max-device-width: 812px;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 $dark-blue: #24214C;
+
+@mixin mobile {
+    @media only screen 
+    and (min-device-width: $mobile-iphonex-mindevice-width) 
+    and (max-device-width: $mobile-iphonex-max-device-width) 
+    and (-webkit-min-device-pixel-ratio: 3) { 
+        @content;
+    }
+}
 
 @mixin tablet {
     @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
@@ -108,20 +119,6 @@ ul.user-details{
     font-weight: 400;
     display: block;
 }
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-    .login-title{
-        color: #555;
-        font-size: 58px;
-    }
-
-    .account-wall h3 {
-        font-size: 57px;
-    }
-
-}
 .profile-img-small{
     width: 36px;
     height: 36px;
@@ -149,7 +146,6 @@ form#message button { width: 9%; background: rgb(130, 224, 255); border: none; p
 }
 #messagesContainer {
     background-color:#92CDCF;
-    height:400px;
 }
 h4 {
   color:white;  
@@ -161,6 +157,23 @@ h4 {
     height:400px
 }
 #videoSearch {
-    background-color:#131462;
-    height:400px;
+    background-color:#131462; //comment
+}
+
+@include mobile {
+    .login-title {
+        font-size: 58px;
+    }
+
+    .account-wall {
+        h3 {
+            font-size: 58px;
+        }
+        form {
+            &.form-signin,
+            &.form-register {
+                max-width: 53%;
+            }
+        }
+    }
 }

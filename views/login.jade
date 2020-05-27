@@ -5,22 +5,23 @@ block content
     div.row
       div.col-sm-12.col-md-4.col-md-offset-4
         h1.text-center.login-title YouTube Party
-          div.account-wall
-            img(class='profile-img center', src='/images/profile-default.png')
-            h3 Log In
-            form(class='form-signin', action='/login', method='POST')
-              input(type='text', name='username' class='form-control', placeholder='Email',required, autofocus)
-              input(type='password', name='password' class='form-control', placeholder='Password', required)
-              button(class='btn btn-lg btn-success btn-block', type='submit') Sign in
-              br
-              a(href='/signup', class='text-center new-account') Register a new Account
-              span.clearfix
-              div Or
-              br
-              span.clearfix
-              a(href='/auth/facebook' class='btn btn-primary btn-lg btn-block')
-                span(class='fa fa-facebook') 
-                  |Facebook
-          #message
-          if message
-            h1.text-center.error-message #{message}
+        div.account-wall.text-center
+          img(class='profile-img center', src='/images/profile-default.png')
+          h3 Log In
+          div.container
+            a(href='/auth/facebook' class='btn btn-primary btn-lg btn-block')
+              span(class='fa fa-facebook') 
+                |Facebook
+          span.clearfix
+          div.my-4 Or
+          form(class='form-signin', action='/login', method='POST')
+            input(type='text', name='username' class='form-control', placeholder='Email',required, autofocus)
+            input(type='password', name='password' class='form-control', placeholder='Password', required)
+            button(class='btn btn-lg btn-success btn-block', type='submit') Sign in
+            br
+            a(href='/signup', class='text-center new-account') Register a new Account
+            span.clearfix
+            br
+        #message
+        if message
+        h1.text-center.error-message #{message}

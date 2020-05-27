@@ -6,7 +6,7 @@ var player=null,
 var app = angular.module("YouTube",[]);
 app.controller("YouTubeCtrl", function($scope,$http){
 	scope=$scope;
-	$scope.term="Search for video";
+	$scope.term="";
 	$scope.nowPlaying = [];
 	$scope.people = [];
 	$scope.currentSong=0;

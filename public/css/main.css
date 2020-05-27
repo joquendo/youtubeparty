@@ -4,34 +4,27 @@
   margin: 0 auto 10px;
   display: block;
   border-radius: 50%;
-  float: left; 
-  opacity: 0.5;
-}
+  float: left; }
 
 .profile-img.center {
-  float: none;
-}
+  float: none; }
 
 .userName-big {
   color: white;
   font-size: 15pt;
   margin-left: 4.5em;
-  margin-top: 24px;
-}
+  margin-top: 24px; }
 
-.form-signin, .form-register {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
-}
+.form-signin,
+.form-register {
+  max-width: 345px;
+  margin: 0 auto; }
 
 .form-signin .form-signin-heading, .form-signin .checkbox {
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .form-signin .checkbox {
-  font-weight: normal;
-}
+  font-weight: normal; }
 
 .form-signin .form-control {
   position: relative;
@@ -40,59 +33,57 @@
   padding: 10px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .form-signin .form-control:focus {
-  z-index: 2;
-}
+  z-index: 2; }
 
 .form-signin input[type="text"] {
   margin-bottom: -1px;
   border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
+  border-bottom-right-radius: 0; }
 
 .form-signin input[type="password"] {
   margin-bottom: 10px;
   border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+  border-top-right-radius: 0; }
 
 .form-signin input[type="password"].nomargin {
   margin-bottom: 0px;
   border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+  border-top-right-radius: 0; }
 
-.form-register input[type="text"], .form-register input[type="password"] {
+.form-register input[type="text"],
+.form-register input[type="password"] {
   margin-bottom: -1px;
-  border-radius: 0;
-}
+  border-radius: 0; }
 
 .form-register input[name="username"] {
   border-top-left-radius: 4px;
-  border-top-right-radius: 4px; 
-}
+  border-top-right-radius: 4px; }
 
 .form-register input[name="lastName"] {
   border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
+  border-bottom-right-radius: 4px; }
 
 .form-register button {
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
-.new-account, .log-in {
+.new-account,
+.log-in {
   display: block;
-  margin: 15px 0;
-}
+  margin-bottom: 15px; }
+
+.account-wall .container {
+  max-width: 375px; }
+
+.my-4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important; }
 
 body {
   padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
@@ -125,17 +116,13 @@ ul.user-details {
   margin-top: 10px;
   width: 100%;
   margin: 0px !important;
-  padding: 0px !important; 
-}
+  padding: 0px !important; }
 
 .thumbnail {
-  width: 70px; 
-}
+  width: 70px; }
 
 .description {
-  color:#fff;
-  font-size: 9pt;
-}
+  font-size: 9pt; }
 
 .search-results-table tr td {
   height: 10px;
@@ -149,7 +136,7 @@ ul.user-details {
   overflow: scroll; }
 
 .selected {
-  color: rgb(206, 166, 34); }
+  color: red; }
 
 .account-wall {
   margin-top: 20px;
@@ -220,20 +207,17 @@ form#message button {
   background: #B1DDDF; }
 
 #messages img {
-  margin-right: 0.5em; }
+  margin-right: .5em; }
 
 #youTubePlayer {
   background-color: #1C1D21;
-}
+  /*height:400px;*/ }
+
 #messagesContainer {
-  background-color: #92CDCF;
-  height: 400px;
-}
+  background-color: #92CDCF; }
 
 h4 {
-  color: white; 
-  margin-bottom: 15px; 
-}
+  color: white; }
 
 #videoPlaylist {
   padding-top: 5px;
@@ -242,7 +226,12 @@ h4 {
   height: 400px; }
 
 #videoSearch {
-  background-color: #131462;
-  height: 400px;
-  padding: 15px;
-}
+  background-color: #131462; }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .login-title {
+    font-size: 58px; }
+  .account-wall h3 {
+    font-size: 58px; }
+  .account-wall form.form-signin, .account-wall form.form-register {
+    max-width: 53%; } }

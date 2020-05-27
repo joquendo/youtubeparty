@@ -1,11 +1,10 @@
+$spacer: 1rem;
 .form-signin,
 .form-register{
-    max-width: 330px;
-    padding: 15px;
+    max-width: 345px;
     margin: 0 auto;
 }
-
-.form-signin .form-signin-heading, .form-signin .checkbox{
+.form-signin .form-signin-heading, .form-signin .checkbox {
     margin-bottom: 10px;
 }
 .form-signin .checkbox{
@@ -57,17 +56,14 @@
 .new-account,
 .log-in{
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .form-signin,
-    .form-register {
-        max-width: 650px;
+.account-wall {
+    .container {
+        max-width: 375px;
     }
-
-    .form-signin input.form-control,
-    .form-register input.form-control {
-        height: 50px;
-    }
+}
+.my-4 {
+    margin-top: ($spacer * 1.5) !important;
+    margin-bottom: ($spacer * 1.5) !important;
 }
