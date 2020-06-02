@@ -1,12 +1,14 @@
+require('custom-env').env();
+
 module.exports = {
-	mongoUrl : 'mongodb+srv://joquendo:M0ng0DB1!1@cluster0-zorrn.mongodb.net/test?retryWrites=true&w=majority',
+	mongoUrl : `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-zorrn.mongodb.net/test?retryWrites=true&w=majority`,
 	youTube : {
 		key : 'AIzaSyDDWf_ETIKJ-X48u1IELy4wHw5O4bj244E',
 		maxResults : 10		
 	},
 	facebook : {
-		clientID: '773378426061827',
-		clientSecret : '8951ad1df08cb2d35227193bae8d04ee',
+		clientID: process.env.FACEBOOK_CLIENT_ID,
+		clientSecret : process.env.FACEBOOK_CLIENT_SECRET,
 		callbackURL : 'https://jamesyoutubeparty.herokuapp.com/auth/facebook/callback'
 	}
 }
