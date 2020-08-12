@@ -1,4 +1,6 @@
-require('custom-env').env();
+if(process.env.NODE_ENV !== 'production') {
+	require('custom-env').env();
+}
 
 module.exports = {
 	mongoUrl : `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-zorrn.mongodb.net/test?retryWrites=true&w=majority`,
