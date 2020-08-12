@@ -3,7 +3,7 @@ require('custom-env').env();
 module.exports = {
 	mongoUrl : `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-zorrn.mongodb.net/test?retryWrites=true&w=majority`,
 	youTube : {
-		key : 'AIzaSyDDWf_ETIKJ-X48u1IELy4wHw5O4bj244E',
+		key : process.env.YOUTUBE_API,
 		maxResults : 10		
 	},
 	facebook : {
